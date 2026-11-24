@@ -3,37 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda</title>
+    <title>Minha Agenda Virtual</title>
 </head>
 <body>
-    <h1>Minha Agenda</h1>
+    
     <script>
+
+        let tarefa = ["\n 6h - Acordar", "\n 7h - Ir para a Escola", "\n 12h - Almoçar","\n 14h - Arrumar a casa", "\n 18h - Treinar", "\n 21h - Jantar/ Tomar banho", "\n 22h - Dormir"]
+
+
+        console.log(`Minha agenda: ${tarefa}`)
         
-         let tarefa = [`06` + ` - Acordar \n` , 13 +  ` - Estudar\n`, 12  + ` - Almoçar\n` , 14 +  ` - tomar banho\n`,  15 +  ` - arrumar a casa\n`,  18 +  ` - Ir treinar\n`, 21 + ` - Jantar\n` ];
-
-
-        tarefa.length;
-        console.log(`Você tem ${tarefa.length} tarefas`);
-
-
-        tarefa.push( 16 +  `URGENTE:  Tomar o Remédio\n`);
-        console.log(tarefa);
-
+        let quantidade = tarefa.length
+        console.log(`Você tem ${quantidade} tarefas pendentes`);
+        
+        
+        let urgente = "\n 15h - Finalizar trabalho da escola"
+        tarefa.push(urgente)
+        quantidade = tarefa.length
+        console.log(`Tarefa Urgente: ${urgente} \n Tarfeas pendentes: ${quantidade}`);
+        
 
         tarefa.sort()
-        console.log(`Tarefa em ordem crescente ${tarefa}`);
+            
+        
+        console.log(`Item removido: ${tarefa[0]}`)
+        tarefa.shift()
+        quantidade = tarefa.length
 
 
-        tarefa.shift(0)
-        console.log( `1º tarefa removida:  ${tarefa}`);
+        console.log(`Você tem ${quantidade} tarefas pendentes`);
+        console.log(`Minha Agenda: ${tarefa}`); 
+        
+
+        quantidade = tarefa.length - 1
+        console.log(`Item removido: ${tarefa[quantidade]}`)
+       tarefa.pop()
+        quantidade = tarefa.length
+        console.log(`Minha Agenda: ${tarefa} \n \n Você tem ${quantidade} tarefas pendentes.`); 
 
 
-        tarefa.pop()
-        console.log( `Tarefa urgente removida: ${tarefa[5]}`);
-
-
-    
-
+        console.log("remover"); 
+        quantidade = Math.round(tarefa.length / 2)
+        console.log(`Tarefa removida. ${tarefa[quantidade]}`);
+        tarefa.splice(quantidade, 1)
+        console.log(`Minha Agenda: ${tarefa}`); 
+  
     </script>
 </body>
 </html>
